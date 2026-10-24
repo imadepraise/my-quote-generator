@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quote Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <p class="wordmark">Quote Generator</p>
+    <p class="tagline">A small collection of quotes, Add yours</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+      <blockquote class="quote-text fade-in" id="quoteText">Click "New quote" to fetch one.</blockquote>
+      <p class="quote-author fade-in" id="quoteAuthor" style="opacity:0;">&mdash;</p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" id="fetchBtn">
+          <span class="spinner"></span>
+          <span class="btn-label" id="fetchLabel">New quote</span>
+        </button>
+        <button class="btn-ghost" id="copyBtn">Copy</button>
+      </div>
+
+      <p class="status-line" id="statusLine"></p>
+      <p class="source-note" id="sourceNote" style="display:none;"></p>
+    </section>
+
+    <section class="browse">
+      <h2 class="section-heading">Browse by mood</h2>
+      <div class="tag-row" id="tagRow"></div>
+      <p class="count-line" id="countLabel">&mdash; of &mdash;</p>
+    </section>
+
+    <section class="submit-panel">
+      <h2 class="section-heading">Add your own</h2>
+      <p class="section-sub">Your quote joins the shared collection for every reader &mdash; it's not private to you.</p>
+
+      <div class="field-row">
+        <div class="field" style="flex-basis:100%;">
+          <label for="quoteInput">Quote</label>
+          <textarea id="quoteInput" rows="2" maxlength="280" placeholder="Type the quote&hellip;"></textarea>
+          <span class="char-count" id="charCount">0 / 280</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="authorInput">Author</label>
+          <input id="authorInput" type="text" maxlength="60" placeholder="Anonymous">
+        </div>
+        <div class="field">
+          <label for="tagSelect">Category</label>
+          <select id="tagSelect"></select>
+        </div>
+      </div>
+      <div class="submit-row">
+        <button class="btn-primary" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-label" id="submitLabel">Add quote</span>
+        </button>
+        <span class="submit-status" id="submitStatus"></span>
+      </div>
+      <div class="db-note" id="dbNote" style="display:none;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built By Imade Praise</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
